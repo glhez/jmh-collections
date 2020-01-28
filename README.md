@@ -6,9 +6,9 @@ Test is split per JDK, with a code duplication (heck) and specialization (eg: us
 
 
 
-## `com.github.glhez.jmhcollections.LongBenchmark`
+## `LongBenchmark`
 
-This will test the following case: filtering a value in a `List<Long>`, `long[]`, `Stream<Long>` or `LongStream`.
+This will test the following case: filtering a value in a `List<Long>`, `long[]`, `Stream<Long>` or [`LongStream`][7].
 
 Setup will:
 
@@ -26,7 +26,7 @@ Test will:
 - Search using `LongStream.anyMatch(LongPredicate)`
 - Parallel search using `LongStream.anyMatch(LongPredicate)`
 
-## `com.github.glhez.jmhcollections.IntegerToString`
+## `IntegerToString`
 
 This will test converting an `int` into a `String`.
 
@@ -45,3 +45,4 @@ This test will behave differently on different JDK: "" + n use StringBuilder in 
 [4]: https://docs.oracle.com/javase/specs/jls/se8/html/jls-5.html#jls-5.1.11
 [5]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)
 [6]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html#append(int)
+[7]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/LongStream.html
