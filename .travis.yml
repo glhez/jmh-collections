@@ -11,16 +11,3 @@ jobs:
 cache:
   directories:
     - $HOME/.m2/repository
-
-script:
-  - jdk_switcher use openjdk8
-#  - ./mvnw clean package
-  - java -version
-  - jdk_switcher use openjdk11
-#  - ./mvnw clean package
-  - java -version
-  - jdk_switcher use openjdk13
-#  - ./mvnw clean package
-  - java -version
-
-

@@ -13,7 +13,7 @@
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
-  <artifactId>jmh-java13</artifactId>
+  <artifactId>jmh-java-13</artifactId>
   <version>1</version>
 
   <name>JMH [Java 13]</name>
