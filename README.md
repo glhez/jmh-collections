@@ -1,4 +1,4 @@
-# JMH Collection
+# JMH Collection [![Build Status](https://travis-ci.org/glhez/jmh-collections.svg?branch=master)](https://travis-ci.org/glhez/jmh-collections)
 
 A collection of JMH benchmark that I wanted to do, after reading question on StackOverflow (why not?).
 
