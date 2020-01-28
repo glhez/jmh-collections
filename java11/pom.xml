@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.glhez.parent</groupId>
+    <artifactId>java-11</artifactId>
+    <version>19</version>
+    <!-- NOTE directory parent is an aggregator, which is not this aggregator. Maven will complain. -->
+    <relativePath />
+  </parent>
+
+  <groupId>com.github.glhez.jmhcollections</groupId>
+  <artifactId>jmhcollection-java11</artifactId>
+  <version>1</version>
+
+  <name>JMH Collection [Java 11]</name>
+</project>
