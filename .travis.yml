@@ -1,10 +1,12 @@
 language: java
-dist: bionic
 
-jdk:
-  - openjdk8
-  - openjdk11
-  - openjdk13
+jobs:
+  include:
+  - jdk: openjdk8
+  - jdk: openjdk11
+    dist: bionic
+  - jdk: openjdk13
+    dist: bionic
 
 cache:
   directories:
@@ -21,5 +23,4 @@ script:
 #  - ./mvnw clean package
   - java -version
 
-  
-  
+
