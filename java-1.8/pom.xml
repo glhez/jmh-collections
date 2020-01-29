@@ -6,21 +6,21 @@
 
   <parent>
     <groupId>com.github.glhez.parent</groupId>
-    <artifactId>java-13</artifactId>
+    <artifactId>java-1.8</artifactId>
     <version>19</version>
     <!-- NOTE directory parent is an aggregator, which is not this aggregator. Maven will complain. -->
     <relativePath />
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
-  <artifactId>jmh-java-13</artifactId>
+  <artifactId>jmh-java-1.8</artifactId>
   <version>1</version>
 
-  <name>JMH [Java 13]</name>
+  <name>JMH Collection [Java 8]</name>
 
   <!-- COPY (curated stuff from jmh artifact id) -->
   <properties>
-    <jmh.finalName>${project.artifactId}-benchmark.jar</jmh.finalName>
+    <jmh.finalName>${project.artifactId}-benchmark</jmh.finalName>
   </properties>
 
   <repositories>
@@ -45,6 +45,17 @@
 
   <build>
     <plugins>
+      <!-- disable it, since JMH generate classes and I don't see how to filter them easily. -->
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>spotbugs-check-execution</id>
+            <phase>never</phase>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -83,4 +94,5 @@
     </plugins>
   </build>
   <!-- END COPY -->
+
 </project>
