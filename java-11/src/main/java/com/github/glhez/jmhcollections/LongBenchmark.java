@@ -26,7 +26,7 @@ import org.openjdk.jmh.annotations.Warmup;
  * @author gael.lhez
  */
 @State(Scope.Benchmark)
-@Warmup(iterations = 2)
+@Warmup(iterations = 3)
 @Measurement(iterations = 15)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @BenchmarkMode({ Mode.AverageTime, Mode.SingleShotTime })

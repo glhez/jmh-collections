@@ -4,7 +4,23 @@ A collection of JMH benchmark that I wanted to do, after reading question on Sta
 
 Test is split per JDK, with a code duplication (heck) and specialization (eg: using new JDK feature) to ensure same code is compiled under the target JDK.
 
+# Running the benchmark
 
+This may take a lot of times!
+
+# Writing a benchmark
+
+Benchmark are copied from Java 8 project up to 11 and 13, using `copy-benchmark.bash`.
+
+Since the JDK evolve, compiled bytecode may differ (for example, Java 8 use [`StringBuilder`][6] whereas Java 9 use [`StringConcatFactory`][1] and API may evolve.
+
+Naming of benchmark:
+
+- Benchmark class must end with `Benchmark`
+- Benchmark for specific **major** version of Java must end with the target release, such as `Benchmark8`, `Benchmark11` and `Benchmark13` for Java 1.8, 11 and 13.
+
+
+# The Benchmark
 
 ## `LongBenchmark`
 
@@ -26,7 +42,7 @@ Test will:
 - Search using `LongStream.anyMatch(LongPredicate)`
 - Parallel search using `LongStream.anyMatch(LongPredicate)`
 
-## `IntegerToString`
+## `IntegerToStringBenchmark`
 
 This will test converting an `int` into a `String`.
 
@@ -38,6 +54,18 @@ There are many method (some may be counter intuitive or stupid:)):
 - [`String.format("%d", n)`][5] (note: the resulting `String` is `Locale` dependent).
 
 This test will behave differently on different JDK: "" + n use StringBuilder in Java 8 and some new class ([`java.lang.invoke.StringConcatFactory`][1])  introduced in Java 9.
+
+## `EnumBenchmark`
+
+This comes from a question: should we use map to find an enum by some random value? For example, let say that for each enum A we have a `String` identifier whose content is invalid with Java identifier:
+
+- Should we use a `Map<String, E>` ?
+- Should we iterate over `E.values()` ?
+- Do we cache `values()` ?
+
+The benchmark enum with multiple cardinality in order to see when one these become "best at".
+
+
 
 [1]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/invoke/StringConcatFactory.html
 [2]: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Integer.html#toString-int-

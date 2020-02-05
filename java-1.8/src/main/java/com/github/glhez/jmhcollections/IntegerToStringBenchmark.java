@@ -16,14 +16,13 @@ import org.openjdk.jmh.annotations.Warmup;
  * Test various way to convert an {@code int} to {@link String}.
  *
  * @author gael.lhez
- *
  */
 @State(Scope.Benchmark)
-@Warmup(iterations = 10)
-@Measurement(iterations = 100)
+@Warmup(iterations = 3)
+@Measurement(iterations = 15)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @BenchmarkMode({ Mode.AverageTime, Mode.SingleShotTime })
-public class IntegerToString {
+public class IntegerToStringBenchmark {
 
   @Param({ "" + Integer.MIN_VALUE, "" + Integer.MAX_VALUE, "0", "1000", "-1000" })
   private int n;
