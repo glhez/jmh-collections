@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.github.glhez.parent</groupId>
     <artifactId>java-11</artifactId>
-    <version>19</version>
+    <version>20</version>
     <!-- NOTE directory parent is an aggregator, which is not this aggregator. Maven will complain. -->
     <relativePath />
   </parent>
@@ -41,6 +41,7 @@
   <dependencies>
     <dependency> <groupId>org.openjdk.jmh</groupId> <artifactId>jmh-core</artifactId>                 <!--scope-->            </dependency>
     <dependency> <groupId>org.openjdk.jmh</groupId> <artifactId>jmh-generator-annprocess</artifactId> <scope>provided</scope> </dependency>
+    <dependency> <groupId>org.freemarker</groupId>  <artifactId>freemarker</artifactId>                                       </dependency>
   </dependencies>
 
   <build>

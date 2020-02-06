@@ -126,7 +126,7 @@ public class EnumBenchmark {
    *
    * @author gael.lhez
    */
-  enum Cases {
+  public enum Cases {
     C3(3, SomeEnum3::values),
     C5(5, SomeEnum5::values),
     C7(7, SomeEnum7::values),

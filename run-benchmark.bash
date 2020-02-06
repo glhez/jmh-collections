@@ -25,7 +25,7 @@ benchmark() {
         echo ":: ${key}: ${properties[$key]}"
       done
 
-      "${java_exec}" -jar "$jar" -rf json 'com\.github\.glhez\.jmhcollections\.IntegerToString\.emptyStringPlusInt'
+      "${java_exec}" -jar "$jar" -rf json 
       break
 
     fi
