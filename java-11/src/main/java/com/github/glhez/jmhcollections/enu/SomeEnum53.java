@@ -54,13 +54,13 @@ public enum SomeEnum53 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE50("@-value-50"),
   VALUE51("@-value-51"),
   VALUE52("@-value-52");
-  
+
   private final String code;
-  
+
   private SomeEnum53(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

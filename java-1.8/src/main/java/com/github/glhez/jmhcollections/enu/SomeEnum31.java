@@ -32,13 +32,13 @@ public enum SomeEnum31 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE28("@-value-28"),
   VALUE29("@-value-29"),
   VALUE30("@-value-30");
-  
+
   private final String code;
-  
+
   private SomeEnum31(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

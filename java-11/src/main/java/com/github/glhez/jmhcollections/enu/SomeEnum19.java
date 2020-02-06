@@ -20,13 +20,13 @@ public enum SomeEnum19 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE16("@-value-16"),
   VALUE17("@-value-17"),
   VALUE18("@-value-18");
-  
+
   private final String code;
-  
+
   private SomeEnum19(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

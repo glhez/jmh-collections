@@ -72,13 +72,13 @@ public enum SomeEnum71 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE68("@-value-68"),
   VALUE69("@-value-69"),
   VALUE70("@-value-70");
-  
+
   private final String code;
-  
+
   private SomeEnum71(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

@@ -12,13 +12,13 @@ public enum SomeEnum11 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE8("@-value-8"),
   VALUE9("@-value-9"),
   VALUE10("@-value-10");
-  
+
   private final String code;
-  
+
   private SomeEnum11(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

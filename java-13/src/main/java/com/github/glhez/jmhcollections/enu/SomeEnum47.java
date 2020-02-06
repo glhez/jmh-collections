@@ -48,13 +48,13 @@ public enum SomeEnum47 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE44("@-value-44"),
   VALUE45("@-value-45"),
   VALUE46("@-value-46");
-  
+
   private final String code;
-  
+
   private SomeEnum47(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

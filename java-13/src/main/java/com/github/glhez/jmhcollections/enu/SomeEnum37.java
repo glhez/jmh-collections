@@ -38,13 +38,13 @@ public enum SomeEnum37 implements com.github.glhez.jmhcollections.EnumBenchmark.
   VALUE34("@-value-34"),
   VALUE35("@-value-35"),
   VALUE36("@-value-36");
-  
+
   private final String code;
-  
+
   private SomeEnum37(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;

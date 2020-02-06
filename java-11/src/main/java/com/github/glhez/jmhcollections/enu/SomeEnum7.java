@@ -8,13 +8,13 @@ public enum SomeEnum7 implements com.github.glhez.jmhcollections.EnumBenchmark.C
   VALUE4("@-value-4"),
   VALUE5("@-value-5"),
   VALUE6("@-value-6");
-  
+
   private final String code;
-  
+
   private SomeEnum7(String code) {
     this.code = code;
   }
-  
+
   @Override
   public String getCode() {
     return this.code;
