@@ -26,8 +26,6 @@ benchmark() {
       done
 
       "${java_exec}" -jar "$jar" -rf json
-      break
-
     fi
   done
 }
