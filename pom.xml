@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.github.glhez.parent</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>26</version> <!--@[com.github.glhez.parent]-->
+    <version>27</version> <!--@[com.github.glhez.parent]-->
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
@@ -39,8 +39,7 @@
       <modules>
         <module>java-1.8</module>
         <module>java-11</module>
-        <module>java-13</module>
-        <module>java-14</module>
+        <module>java-15</module>
       </modules>
     </profile>
 
@@ -67,21 +66,12 @@
     </profile>
 
     <profile>
-      <id>travis-jdk13</id>
-      <activation> <property> <name>env.TRAVIS</name> </property> <jdk>13</jdk> </activation>
+      <id>travis-jdk15</id>
+      <activation> <property> <name>env.TRAVIS</name> </property> <jdk>15</jdk> </activation>
       <modules>
-        <module>java-13</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>travis-jdk14</id>
-      <activation> <property> <name>env.TRAVIS</name> </property> <jdk>14</jdk> </activation>
-      <modules>
-        <module>java-14</module>
+        <module>java-15</module>
       </modules>
     </profile>
   </profiles>
 
 </project>
-

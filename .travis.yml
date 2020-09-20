@@ -5,7 +5,7 @@ jobs:
   - jdk: openjdk8
   - jdk: openjdk11
     dist: bionic
-  - jdk: openjdk13
+  - jdk: openjdk15
     dist: bionic
 
 cache:
