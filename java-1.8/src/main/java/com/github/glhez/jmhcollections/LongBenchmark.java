@@ -52,7 +52,8 @@ public class LongBenchmark {
     lookupWrapper = lookup;
     array = LongStream.concat(LongStream.generate(random::nextLong)
                                         .filter(n -> n != lookup && isUncached(n))
-                                        .limit(length - 1), LongStream.of(lookup))
+                                        .limit(length - 1),
+                              LongStream.of(lookup))
                       .toArray();
     list = LongStream.of(array).boxed().collect(toList());
 
