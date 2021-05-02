@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.github.glhez.parent</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>32</version>
+    <version>37</version>
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
@@ -19,14 +19,14 @@
   <repositories>
     <repository>
       <id>github-glhez-repo-dep</id>
-      <url>https://raw.githubusercontent.com/glhez/maven-repository/master/releases/</url>
+      <url>https://glhez.github.io/maven-repository/releases</url>
       <snapshots> <enabled>false</enabled> </snapshots>
     </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
       <id>github-glhez-repo-plugin</id>
-      <url>https://raw.githubusercontent.com/glhez/maven-repository/master/releases/</url>
+      <url>https://glhez.github.io/maven-repository/releases</url>
       <snapshots> <enabled>false</enabled> </snapshots>
     </pluginRepository>
   </pluginRepositories>
