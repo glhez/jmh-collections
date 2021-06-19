@@ -1,4 +1,4 @@
-# JMH Collection [![Build Status](https://travis-ci.org/glhez/jmh-collections.svg?branch=master)](https://travis-ci.org/glhez/jmh-collections)
+# JMH Collection
 
 A collection of JMH benchmark that I wanted to do, after reading question on StackOverflow (why not?).
 
@@ -10,14 +10,14 @@ This may take a lot of times!
 
 # Writing a benchmark
 
-Benchmark are copied from Java 8 project up to 11 and 13, using `copy-benchmark.bash`.
+Benchmark are copied from Java 8 project up to 11 and latest (should be 16), using `copy-benchmark.bash`.
 
 Since the JDK evolve, compiled bytecode may differ (for example, Java 8 use [`StringBuilder`][6] whereas Java 9 use [`StringConcatFactory`][1] and API may evolve.
 
 Naming of benchmark:
 
 - Benchmark class must end with `Benchmark`
-- Benchmark for specific **major** version of Java must end with the target release, such as `Benchmark8`, `Benchmark11` and `Benchmark13` for Java 1.8, 11 and 13.
+- Benchmark for specific **major** version of Java must end with the target release, such as `Benchmark8`, `Benchmark11` and `Benchmark13` for Java 1.8, 11 and latest.
 
 
 # The Benchmark
