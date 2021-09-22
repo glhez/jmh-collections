@@ -6,17 +6,17 @@
 
   <parent>
     <groupId>com.github.glhez.parent</groupId>
-    <artifactId>java-16</artifactId>
-    <version>46</version>
+    <artifactId>java-17</artifactId>
+    <version>47</version>
     <!-- NOTE directory parent is an aggregator, which is not this aggregator. Maven will complain. -->
     <relativePath />
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
-  <artifactId>jmh-java-16</artifactId>
+  <artifactId>jmh-java-17</artifactId>
   <version>1</version>
 
-  <name>JMH [Java 16]</name>
+  <name>JMH [Java 17]</name>
 
   <!-- COPY (curated stuff from jmh artifact id) -->
   <properties>

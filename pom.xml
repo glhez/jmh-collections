@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.github.glhez.parent</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>46</version>
+    <version>47</version>
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
@@ -39,7 +39,7 @@
       <modules>
         <module>java-1.8</module>
         <module>java-11</module>
-        <module>java-16</module>
+        <module>java-17</module>
       </modules>
     </profile>
 
@@ -66,10 +66,10 @@
     </profile>
 
     <profile>
-      <id>ci-jdk16</id>
-      <activation> <property> <name>githubActionEnabled</name> </property> <jdk>16</jdk> </activation>
+      <id>ci-jdk17</id>
+      <activation> <property> <name>githubActionEnabled</name> </property> <jdk>17</jdk> </activation>
       <modules>
-        <module>java-16</module>
+        <module>java-17</module>
       </modules>
     </profile>
   </profiles>
