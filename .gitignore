@@ -27,7 +27,7 @@ hs_err_pid*
 /.profiler
 .apt_generated/
 .apt_generated_tests/
-
+dependency-reduced-pom.xml
 
 # Visual Studio Code/Codium
 .vscode/
