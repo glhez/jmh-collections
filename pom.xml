@@ -30,39 +30,4 @@
       <snapshots> <enabled>false</enabled> </snapshots>
     </pluginRepository>
   </pluginRepositories>
-
-  <profiles>
-    <profile>
-      <id>not-travis</id>
-      <activation> <property> <name>!githubActionEnabled</name> </property> </activation>
-      <properties> <toolchain.phase>validate</toolchain.phase> </properties>
-      <modules>
-        <module>java-1.8</module>
-        <module>java-17</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>ci-common</id>
-      <activation> <property> <name>githubActionEnabled</name> </property> </activation>
-      <properties> <toolchain.phase>none</toolchain.phase> </properties>
-    </profile>
-
-    <profile>
-      <id>ci-jdk8</id>
-      <activation> <property> <name>githubActionEnabled</name> </property> <jdk>1.8</jdk> </activation>
-      <modules>
-        <module>java-1.8</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>ci-jdk17</id>
-      <activation> <property> <name>githubActionEnabled</name> </property> <jdk>17</jdk> </activation>
-      <modules>
-        <module>java-17</module>
-      </modules>
-    </profile>
-  </profiles>
-
 </project>
