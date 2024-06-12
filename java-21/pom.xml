@@ -6,17 +6,17 @@
 
   <parent>
     <groupId>com.github.glhez.parent</groupId>
-    <artifactId>java-1.8</artifactId>
+    <artifactId>java-21</artifactId>
     <version>82</version>
     <!-- NOTE directory parent is an aggregator, which is not this aggregator. Maven will complain. -->
     <relativePath />
   </parent>
 
   <groupId>com.github.glhez.jmhcollections</groupId>
-  <artifactId>jmh-java-1.8</artifactId>
+  <artifactId>jmh-java-21</artifactId>
   <version>1</version>
 
-  <name>JMH [Java 8]</name>
+  <name>JMH [Java 21]</name>
 
   <!-- COPY (curated stuff from jmh artifact id) -->
   <properties>
@@ -46,6 +46,15 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <annotationProcessorPaths combine.children="append">
+            <path> <groupId>org.openjdk.jmh</groupId> <artifactId>jmh-generator-annprocess</artifactId> <version>${dep.jmh-generator-annprocess.version}</version> </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>

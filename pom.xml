@@ -30,4 +30,10 @@
       <snapshots> <enabled>false</enabled> </snapshots>
     </pluginRepository>
   </pluginRepositories>
+
+  <modules>
+    <module>java-1.8</module>
+    <module>java-17</module>
+    <module>java-21</module>
+  </modules>
 </project>
