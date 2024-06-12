@@ -30,6 +30,6 @@ benchmark() {
   done
 }
 
-benchmark './java-1.8/target/jmh-java-1.8-benchmark.jar' "${JAVA8_HOME}"  "${JAVA8_OPENJ9_HOME}" "${JAVA8_REDHAT_HOME}"
-benchmark './java-11/target/jmh-java-11-benchmark.jar'   "${JAVA11_HOME}" "${JAVA11_OPENJ9_HOME}"
-benchmark './java-13/target/jmh-java-13-benchmark.jar'   "${JAVA13_HOME}" "${JAVA13_OPENJ9_HOME}"
+benchmark './java-1.8/target/jmh-java-1.8-benchmark.jar' "${JAVA8_HOME}"
+benchmark './java-17/target/jmh-java-17-benchmark.jar'   "${JAVA17_HOME}"
+benchmark './java-21/target/jmh-java-21-benchmark.jar'   "${JAVA21_HOME}"
