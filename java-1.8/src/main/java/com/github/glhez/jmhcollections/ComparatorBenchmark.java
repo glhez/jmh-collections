@@ -18,17 +18,17 @@ import org.openjdk.jmh.annotations.Warmup;
 import org.openjdk.jmh.infra.Blackhole;
 
 @State(Scope.Benchmark)
-@Warmup(  time = 1, timeUnit = TimeUnit.SECONDS)
-@Measurement(  time = 1, timeUnit = TimeUnit.SECONDS)
+@Warmup(time = 1, timeUnit = TimeUnit.SECONDS)
+@Measurement(time = 1, timeUnit = TimeUnit.SECONDS)
 @Fork(1)
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
-@BenchmarkMode({ Mode.AverageTime})
+@BenchmarkMode({ Mode.AverageTime })
 public class ComparatorBenchmark {
 
-  @Param({ "" + Integer.MIN_VALUE, "" + Integer.MAX_VALUE, "10" /*, "-1000", "5000", "10000", "20000", "50000", "100000"*/ })
+  @Param({ "" + Integer.MIN_VALUE, "" + Integer.MAX_VALUE, "10" /* , "-1000", "5000", "10000", "20000", "50000", "100000" */ })
   private Integer v1;
 
-  @Param({ "" + Integer.MIN_VALUE, "" + Integer.MAX_VALUE, "10" /*, "1000", "-5000", "10000", "20000", "50000", "100000" */ })
+  @Param({ "" + Integer.MIN_VALUE, "" + Integer.MAX_VALUE, "10" /* , "1000", "-5000", "10000", "20000", "50000", "100000" */ })
   private Integer v2;
 
   private Comparator<Integer> cmp1;
