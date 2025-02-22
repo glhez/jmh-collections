@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.glhez.parent</groupId>
+    <artifactId>maven-parent</artifactId>
+    <version>92</version>
+    <!-- NOTE directory parent is an aggregator, which is not this aggregator. Maven will complain. -->
+    <relativePath/>
+  </parent>
+
+  <groupId>com.github.glhez.jmhcollections</groupId>
+  <artifactId>parent</artifactId>
+  <version>${revision}</version>
+  <packaging>pom</packaging>
+
+  <name>JMH [Parent]</name>
+
+  <properties>
+    <revision>0.0.0-SNAPSHOT</revision>
+    <jmh.finalName>${project.artifactId}-benchmark</jmh.finalName>
+
+    <dep.jmh-core.version>1.37</dep.jmh-core.version>
+    <dep.jmh-generator-annprocess.version>1.37</dep.jmh-generator-annprocess.version>
+    <dep.freemarker.version>2.3.34</dep.freemarker.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.openjdk.jmh</groupId>
+        <artifactId>jmh-core</artifactId>
+        <version>${dep.jmh-core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openjdk.jmh</groupId>
+        <artifactId>jmh-generator-annprocess</artifactId>
+        <version>${dep.jmh-generator-annprocess.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.freemarker</groupId>
+        <artifactId>freemarker</artifactId>
+        <version>${dep.freemarker.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>github-glhez-repo-dep</id>
+      <url>https://glhez.github.io/maven-repository/releases</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>github-glhez-repo-plugin</id>
+      <url>https://glhez.github.io/maven-repository/releases</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <annotationProcessorPaths combine.children="append">
+              <path>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>${dep.jmh-generator-annprocess.version}</version>
+              </path>
+            </annotationProcessorPaths>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <configuration>
+            <finalName>${jmh.finalName}</finalName>
+            <transformers>
+              <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                <mainClass>org.openjdk.jmh.Main</mainClass>
+              </transformer>
+              <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+            </transformers>
+            <filters>
+              <filter>
+                <!--
+                    Shading signed JARs will fail without this.
+                    http://stackoverflow.com/questions/999489/invalid-signature-file-when-attempting-to-run-a-jar
+                  -->
+                <artifact>*:*</artifact>
+                <excludes>
+                  <exclude>META-INF/*.SF</exclude>
+                  <exclude>META-INF/*.DSA</exclude>
+                  <exclude>META-INF/*.RSA</exclude>
+                </excludes>
+              </filter>
+            </filters>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-toolchains-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>select-jdk-toolchain</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

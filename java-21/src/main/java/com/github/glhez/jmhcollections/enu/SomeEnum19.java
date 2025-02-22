@@ -1,6 +1,6 @@
 package com.github.glhez.jmhcollections.enu;
 
-public enum SomeEnum19 implements com.github.glhez.jmhcollections.EnumBenchmark.CodeProvider {
+public enum SomeEnum19 implements CodeProvider {
   VALUE0("@-value-0"),
   VALUE1("@-value-1"),
   VALUE2("@-value-2"),

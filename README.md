@@ -4,11 +4,11 @@ A collection of JMH benchmark that I wanted to do, after reading question on Sta
 
 Test is split per JDK, with a code duplication (heck) and specialization (eg: using new JDK feature) to ensure same code is compiled under the target JDK.
 
-# Running the benchmark
+## Running the benchmark
 
 This may take a lot of times!
 
-# Writing a benchmark
+## Writing a benchmark
 
 Benchmark are copied from Java 8 project up to 11 and latest (should be 16), using `copy-benchmark.bash`.
 
@@ -19,10 +19,9 @@ Naming of benchmark:
 - Benchmark class must end with `Benchmark`
 - Benchmark for specific **major** version of Java must end with the target release, such as `Benchmark8`, `Benchmark11` and `Benchmark13` for Java 1.8, 11 and latest.
 
+## Benchmarks
 
-# The Benchmark
-
-## `LongBenchmark`
+### `LongBenchmark`
 
 This will test the following case: filtering a value in a `List<Long>`, `long[]`, `Stream<Long>` or [`LongStream`][7].
 
@@ -42,7 +41,7 @@ Test will:
 - Search using `LongStream.anyMatch(LongPredicate)`
 - Parallel search using `LongStream.anyMatch(LongPredicate)`
 
-## `IntegerToStringBenchmark`
+### `IntegerToStringBenchmark`
 
 This will test converting an `int` into a `String`.
 
@@ -55,7 +54,7 @@ There are many method (some may be counter intuitive or stupid:)):
 
 This test will behave differently on different JDK: "" + n use StringBuilder in Java 8 and some new class ([`java.lang.invoke.StringConcatFactory`][1])  introduced in Java 9.
 
-## `EnumBenchmark`
+### `EnumBenchmark`
 
 This comes from a question: should we use map to find an enum by some random value? For example, let say that for each enum A we have a `String` identifier whose content is invalid with Java identifier:
 
@@ -65,8 +64,6 @@ This comes from a question: should we use map to find an enum by some random val
 
 The benchmark enum with multiple cardinality in order to see when one these become "best at".
 
-
-
 [1]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/invoke/StringConcatFactory.html
 [2]: https://docs.oracle.com/en/java/javase/11/docs/api/java/lang/Integer.html#toString-int-
 [3]: https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.18.1
@@ -74,3 +71,4 @@ The benchmark enum with multiple cardinality in order to see when one these beco
 [5]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)
 [6]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html#append(int)
 [7]: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/stream/LongStream.html
+

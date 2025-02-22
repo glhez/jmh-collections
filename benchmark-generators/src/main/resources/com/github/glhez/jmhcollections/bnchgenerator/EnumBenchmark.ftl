@@ -1,6 +1,6 @@
 package ${packageName};
 
-public enum ${className} implements com.github.glhez.jmhcollections.EnumBenchmark.CodeProvider {
+public enum ${className} implements CodeProvider {
 <#list values as value>  ${value.name}("${value.code}")<#sep>,
 </#sep></#list>;
   

@@ -3,37 +3,23 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.github.glhez.parent</groupId>
-    <artifactId>maven-parent</artifactId>
-    <version>91</version>
+    <groupId>com.github.glhez.jmhcollections</groupId>
+    <artifactId>parent</artifactId>
+    <version>${revision}</version>
+    <relativePath>parent</relativePath>
   </parent>
 
-  <groupId>com.github.glhez.jmhcollections</groupId>
   <artifactId>jmhcollection-aggregator</artifactId>
-  <version>1</version>
-
   <packaging>pom</packaging>
 
-  <name>glhez's JMH Collections :: parent</name>
-
-  <repositories>
-    <repository>
-      <id>github-glhez-repo-dep</id>
-      <url>https://glhez.github.io/maven-repository/releases</url>
-      <snapshots> <enabled>false</enabled> </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>github-glhez-repo-plugin</id>
-      <url>https://glhez.github.io/maven-repository/releases</url>
-      <snapshots> <enabled>false</enabled> </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+  <name>glhez's JMH Collections :: aggregator</name>
 
   <modules>
+    <module>parent</module>
     <module>java-1.8</module>
     <module>java-17</module>
     <module>java-21</module>
+    <module>benchmark-generators</module>
   </modules>
+
 </project>
