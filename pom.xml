@@ -12,8 +12,6 @@
   <artifactId>jmhcollection-aggregator</artifactId>
   <packaging>pom</packaging>
 
-  <name>glhez's JMH Collections :: aggregator</name>
-
   <modules>
     <module>parent</module>
     <module>java-1.8</module>
