@@ -19,7 +19,4 @@ copy_files() {
   done < <(find "java-${source}/src/main/java" "java-${source}/src/main/resources" -type f )
 }
 
-
-
-copy_files 1.8 17 21
-
+copy_files 1.8 17 21 25
