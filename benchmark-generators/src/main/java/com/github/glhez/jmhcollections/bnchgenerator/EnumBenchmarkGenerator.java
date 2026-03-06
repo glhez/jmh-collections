@@ -99,7 +99,7 @@ public class EnumBenchmarkGenerator {
                                   CLASS_NAME_PATTERN.formatted(numberOfEnumConstants)))
                               .toList();
 
-    for (var javaMajorVersion : new int[] { 8, 17, 21 }) {
+    for (var javaMajorVersion : new int[] { 21, 25 }) {
       System.out.println("generating code for Java " + javaMajorVersion);
 
       var ebg = new EnumBenchmarkGenerator(cfg, javaMajorVersion, Paths.get("..").resolve(toProjectDirectory(javaMajorVersion)));
@@ -126,11 +126,9 @@ public class EnumBenchmarkGenerator {
 
   }
 
-  public record CodeProviderModel(int javaMajorVersion, String packageName, String className) {
-  }
+  public record CodeProviderModel(int javaMajorVersion, String packageName, String className) {}
 
-  public record CasesModel(int javaMajorVersion, String packageName, String className, List<SourceCases> values) {
-  }
+  public record CasesModel(int javaMajorVersion, String packageName, String className, List<SourceCases> values) {}
 
   public record EnumModel(int javaMajorVersion, String packageName, String className, List<EnumConstantModel> values) {
     public static EnumModel of(int javaMajorVersion, SourceCases model) {

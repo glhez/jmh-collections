@@ -17,7 +17,7 @@ Since the JDK evolve, compiled bytecode may differ (for example, Java 8 use [`St
 Naming of benchmark:
 
 - Benchmark class must end with `Benchmark`
-- Benchmark for specific **major** version of Java must end with the target release, such as `Benchmark8`, `Benchmark11` and `Benchmark13` for Java 1.8, 11 and latest.
+- Benchmark for specific **major** version of Java must end with the target release, such as `Benchmark8`, `Benchmark11` and `Benchmark13` for Java 21 and latest.
 
 ## Benchmarks
 

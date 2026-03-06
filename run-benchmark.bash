@@ -30,6 +30,5 @@ benchmark() {
   done
 }
 
-benchmark './java-1.8/target/jmh-java-1.8-benchmark.jar' "${JAVA_8_HOME}"
-benchmark './java-17/target/jmh-java-17-benchmark.jar'   "${JAVA_17_HOME}"
 benchmark './java-21/target/jmh-java-21-benchmark.jar'   "${JAVA_21_HOME}"
+benchmark './java-21/target/jmh-java-25-benchmark.jar'   "${JAVA_25_HOME}"
