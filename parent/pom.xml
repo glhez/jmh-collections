@@ -23,7 +23,7 @@
 
     <dep.jmh-core.version>1.37</dep.jmh-core.version>
     <dep.jmh-generator-annprocess.version>1.37</dep.jmh-generator-annprocess.version>
-    <dep.freemarker.version>2.3.34</dep.freemarker.version>
+    <dep.freemarker.version>2.3.35</dep.freemarker.version>
   </properties>
 
   <dependencyManagement>
